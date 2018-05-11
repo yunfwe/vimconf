@@ -7,4 +7,4 @@ vim的版本当然是越新越好，在ubuntu16.04和18.04上都没有问题。
 
 # 安装
 
-`curl https://raw.githubusercontent.com/yunfwe/vimconf/master/install.sh | sh`
+`source <(curl -s https://raw.githubusercontent.com/yunfwe/vimconf/master/install.sh)`
