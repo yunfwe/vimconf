@@ -58,7 +58,8 @@ set cursorline           " 高亮显示当前行
 set whichwrap+=<,>,h,l   " 设置光标键跨行
 set virtualedit=block,onemore   " 允许光标出现在最后一个字符的后面
 set incsearch            " 实时搜索
-set mouse-=a              " 允许使用鼠标操作
+set mouse-=a             " 不允许使用鼠标操作
+set noeb vb t_vb=        " 关闭终端响铃
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 代码缩进和排版
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -112,7 +113,7 @@ func SetTitle()
     elseif &filetype == 'python'
         call setline(1,"#!/usr/bin/env python")
         call append(line("."),"# -*- coding:utf-8 -*-")
-        call append(line(".")+1,"# Author: yunfwe  date: ".strftime("%Y-%m-%d"))
+        call append(line(".")+1,"# Author: root  date: ".strftime("%Y-%m-%d"))
         call append(line(".")+2, "") 
         call append(line(".")+3, "") 
 
@@ -127,8 +128,8 @@ func SetTitle()
     else 
         call setline(1, "/*************************************************************************") 
         call append(line("."), "	> File Name: ".expand("%")) 
-        call append(line(".")+1, "	> Author: yunfwe") 
-        call append(line(".")+2, "	> Mail: 1441923087@qq.com") 
+        call append(line(".")+1, "	> Author: root") 
+        call append(line(".")+2, "	> Mail: root@localhost.com") 
         call append(line(".")+3, "	> Created Time: ".strftime("%Y-%m-%d")) 
         call append(line(".")+4, " ************************************************************************/") 
         call append(line(".")+5, "")
@@ -164,8 +165,7 @@ autocmd BufNewFile * normal G
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <C-N> :bn<CR>
 nnoremap <C-P> :bp<CR>
-nmap <Esc><Esc><Esc> :w<CR>
-
+nmap <Esc><Esc><Esc> :qa!<CR> " 连续三个Esc不保存退出全部
 " 切换NERDTree 
 map <F3> :NERDTreeToggle<CR>
 :autocmd BufRead,BufNewFile *.dot map <F5> :w<CR>:!dot -Tjpg -o %<.jpg % && eog %<.jpg  <CR><CR> && exec "redr!"
