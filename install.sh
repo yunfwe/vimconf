@@ -1,7 +1,8 @@
 #!/bin/bash
-mv ~/.vimrc ~/.vimrc.bak
-mv ~/.vim ~/.vim.bak
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+mv ~/.vimrc ~/.vimrc.bak &>/dev/null
+mv ~/.vim ~/.vim.bak &>/dev/null
+echo "Downloading... please wait"
+curl -s -fLo  ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 cat > ~/.vimrc <<END
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'      " 目录树插件
@@ -17,5 +18,6 @@ call plug#end()
 END
 
 vim -c "PlugInstall" -c "q" -c "q"
-cp -rf .vimrc ~/.vimrc
+cp -rf .vimrc ~/.vimrc &>/dev/null
+echo "Install done! engoy it..."
 
