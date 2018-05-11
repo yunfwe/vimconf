@@ -20,6 +20,6 @@ END
 vim -c "PlugInstall" -c "q" -c "q"
 # cp -rf .vimrc ~/.vimrc &>/dev/null
 rm -rf ~/.vimrc &>/dev/null
-curl -s -fLo  ~/.vimrc https://raw.githubusercontent.com/yunfwe/vimconf/master/install.sh
+curl -s -fLo  ~/.vimrc https://raw.githubusercontent.com/yunfwe/vimconf/master/vimrc
 echo "Install done! engoy it..."
 
