@@ -166,10 +166,15 @@ autocmd BufNewFile * normal G
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <C-N> :bn<CR>
 nnoremap <C-P> :bp<CR>
-nmap <Esc><Esc><Esc> :qa!<CR> " 连续三个Esc不保存退出全部
+nmap <Esc><Esc> :qa!<CR>      " 连续三个Esc不保存退出全部"
+nmap <tab><tab> :w<CR>        " 连续两个Tab保存当前文件"
 " 切换NERDTree 
 map <F3> :NERDTreeToggle<CR>
 :autocmd BufRead,BufNewFile *.dot map <F5> :w<CR>:!dot -Tjpg -o %<.jpg % && eog %<.jpg  <CR><CR> && exec "redr!"
+"B
+"B
+"Bdd
+"B
 "C，C++ 按F5编译运行
 map <F5> :call CompileRunGcc()<CR>
 func! CompileRunGcc()
