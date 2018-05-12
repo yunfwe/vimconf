@@ -58,6 +58,7 @@ set cursorline           " 高亮显示当前行
 set whichwrap+=<,>,h,l   " 设置光标键跨行
 set virtualedit=block,onemore   " 允许光标出现在最后一个字符的后面
 set incsearch            " 实时搜索
+set hlsearch             " 搜索时高亮
 set mouse-=a             " 不允许使用鼠标操作
 set noeb vb t_vb=        " 关闭终端响铃
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -113,7 +114,7 @@ func SetTitle()
     elseif &filetype == 'python'
         call setline(1,"#!/usr/bin/env python")
         call append(line("."),"# -*- coding:utf-8 -*-")
-        call append(line(".")+1,"# Author: root  date: ".strftime("%Y-%m-%d"))
+        call append(line(".")+1,"# Author: yunfwe  date: ".strftime("%Y-%m-%d"))
         call append(line(".")+2, "") 
         call append(line(".")+3, "") 
 
@@ -128,8 +129,8 @@ func SetTitle()
     else 
         call setline(1, "/*************************************************************************") 
         call append(line("."), "	> File Name: ".expand("%")) 
-        call append(line(".")+1, "	> Author: root") 
-        call append(line(".")+2, "	> Mail: root@localhost.com") 
+        call append(line(".")+1, "	> Author: yunfwe") 
+        call append(line(".")+2, "	> Mail: 1441923087@qq.com") 
         call append(line(".")+3, "	> Created Time: ".strftime("%Y-%m-%d")) 
         call append(line(".")+4, " ************************************************************************/") 
         call append(line(".")+5, "")
