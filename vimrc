@@ -182,15 +182,15 @@ func! CompileRunGcc()
     if &filetype == 'c'
         "exec "!g++ % -o %<"
         "exec "!time ./%<"
-        exec "!g++ % -o %< && time ./%<"
+        exec "!g++ % -o %< && time ./%< && rm ./%<"
     elseif &filetype == 'cpp'
         "exec "!g++ % -std=c++11 -o %<"
         "exec "!time ./%<"
-        exec "!g++ % -std=c++11 -o %< && time ./%<"
+        exec "!g++ % -std=c++11 -o %< && time ./%< && rm ./%<"
     elseif &filetype == 'java' 
         "exec "!javac %" 
         "exec "!time java %<"
-        exec "!javac % && time java %<"
+        exec "!javac % && time java %< && rm ./%<"
     elseif &filetype == 'sh'
         :!time bash %
     elseif &filetype == 'python'
