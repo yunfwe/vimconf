@@ -180,9 +180,9 @@ map <F5> :call CompileRunGcc()<CR>
 func! CompileRunGcc()
     exec "w"
     if &filetype == 'c'
-        "exec "!g++ % -o %<"
+        "exec "!gcc % -o %<"
         "exec "!time ./%<"
-        exec "!g++ % -o %< && time ./%< && rm ./%<"
+        exec "!gcc % -o %< && time ./%< && rm ./%<"
     elseif &filetype == 'cpp'
         "exec "!g++ % -std=c++11 -o %<"
         "exec "!time ./%<"
