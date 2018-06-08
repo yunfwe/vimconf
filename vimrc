@@ -55,7 +55,7 @@ set ruler                " 总是显示光标位置
 set laststatus=2         " 总是显示状态栏
 set number               " 开启行号显示
 set cursorline           " 高亮显示当前行
-set whichwrap+=<,>,h,l   " 设置光标键跨行
+"set whichwrap+=<,>,h,l   " 设置光标键跨行
 set virtualedit=block,onemore   " 允许光标出现在最后一个字符的后面
 set incsearch            " 实时搜索
 set hlsearch             " 搜索时高亮
